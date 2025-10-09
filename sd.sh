@@ -39,7 +39,7 @@ sd(){
 
   # modified-time|ftype-placeholder|size-placeholder|permissions(octal)|filename|ftype|link(ifexists)|leadingDirName(notused?)|filetype(data)|size(data-bytes)
   fcmd+=( -printf "${mts}|x|s|%#m|%P|%y|%l|%h|" )
-  fcmd+=( -execdir file -L -0 -0 -N -n -b -i '{}' \; )
+  fcmd+=( -execdir file -L -0 -0 -N -i -b -n '{}' \; )
   fcmd+=( -printf '|' )
 
   if [[ ${useDu} -eq 0 ]]
