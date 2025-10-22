@@ -166,6 +166,12 @@ sd(){
       print
 
       }
+
+      END {
+        if (i == 0){
+          printf("sd: No files found.\n") >"/dev/stderr"
+        }
+      }
     ' | \
     numfmt -d'|' --field 3 --to=iec | \
     column -s'|' -t \
