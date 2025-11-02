@@ -7,6 +7,7 @@ sd(){
   local sortcmd=( sort -t$'|' -k 1 -V )
   local maxfinddepth=(-maxdepth 1)
   local maxdudepth=(-s)
+  local fClass=""
 
   local usg="
   ${FUNCNAME[0]} [-S] [-L <depth>] [-cfhsuv]
