@@ -91,7 +91,7 @@ sd(){
           # apply filter to filetype col
           if ( fClass ){
             # if we dont match; skip to next record
-            if ( match( $NF, fClass ) == 0 ){
+            if ( retstr !~ fClass ){
               next
             }
           }
