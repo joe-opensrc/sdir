@@ -54,6 +54,7 @@ sd(){
   IFS=$'\n' "${fcmd[@]}" 2>/dev/null | \
     ${sortcmd[@]} | \
     awk -vOFS="|" -F"|" -vuseDu="${useDu}" -vuseColor=${useColor} \
+    -vfClass="${fClass}" \
     '
       BEGIN {
         tcol=1; xcol=2; scol=3; mcol=4; pcol=5; ycol=6; lcol=7; hcol=8;
