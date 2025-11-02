@@ -84,6 +84,15 @@ sd(){
         # file -bi format: "ftypestr[,;] charset=<charset>"
         sci=match($NF, /[,;]/)
         if ( sci > 0 ){
+
+          # apply filter to filetype col
+          if ( fClass ){
+            # if we dont match; skip to next record
+            if ( match( $NF, fClass ) == 0 ){
+              next
+            }
+          }
+
           # extract first field (ie. upto /[,;]/)
           retstr=substr($NF,1,sci-1)
           # M$ofts legacy... ;)
