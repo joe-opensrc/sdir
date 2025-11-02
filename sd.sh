@@ -85,6 +85,9 @@ sd(){
         sci=match($NF, /[,;]/)
         if ( sci > 0 ){
 
+          # extract first field (ie. upto /[,;]/)
+          retstr=substr($NF,1,sci-1)
+
           # apply filter to filetype col
           if ( fClass ){
             # if we dont match; skip to next record
@@ -92,9 +95,6 @@ sd(){
               next
             }
           }
-
-          # extract first field (ie. upto /[,;]/)
-          retstr=substr($NF,1,sci-1)
 
           # shorten long output strings 
           sub(/vnd\.openxmlformats-officedocument\.wordprocessingml\.document/, "openxml-docx", retstr )
