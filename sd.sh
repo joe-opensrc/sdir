@@ -15,13 +15,14 @@ sd(){
   "
 
   local OPTIND= OPTARG= OPTERR=
-  while getopts 'cSL:fhsuv' flag
+  while getopts 'cF:SL:fhsuv' flag
   do
     case "${flag}" in
       c) useColor="";;
       S) sortcmd=( cat - );;
       L) maxfinddepth=(-maxdepth ${OPTARG});
          maxdudepth=(-d ${OPTARG});;
+      F) fClass="${OPTARG}";;
       f) sortcmd=( sort -t$'|' -k 5 -f );;
       h) echo -ne "${usg}"; return 0;;
       s) sortcmd=( sort -t$'|' -k 10 -n );;
