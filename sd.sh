@@ -105,7 +105,8 @@ sd(){
       # stream actions
       {
 
-        transposeDuColumn(scol)
+        i++;
+        transposeDuColumn(scol);
         transposeFileTypeCol(xcol);
  
         if( length($lcol) > 0 ){
