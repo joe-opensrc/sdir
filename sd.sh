@@ -78,7 +78,7 @@ sd(){
         $dst = dsize;
         NF--;
       }
-      
+ 
       ###
       function transposeFileTypeCol(dst){
         # file -bi format: "ftypestr[,;] charset=<charset>"
@@ -95,10 +95,11 @@ sd(){
 
           # extract first field (ie. upto /[,;]/)
           retstr=substr($NF,1,sci-1)
-          # M$ofts legacy... ;)
-          # try and do clever regex stuff later? ...
+
+          # shorten long output strings 
           sub(/vnd\.openxmlformats-officedocument\.wordprocessingml\.document/, "openxml-docx", retstr )
           sub(/vnd\.openxmlformats-officedocument\.spreadsheetml\.sheet/,       "openxml-xlsx", retstr )
+
         }else{
           sci=match($NF, /cannot|inode\/symlink/)
           if ( sci > 0 ){
