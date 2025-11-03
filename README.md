@@ -13,6 +13,7 @@
 
       sd [-S] [-L <depth>] [-cfhsuv]
 
+      -F <regex>  :=  filter filetype by regex
       -S          :=  do not sort output (use "found" order)
       -L <depth>  :=  limit depth of call to find + du (aka., max-*depth)
       -c          :=  /don't/ colorize output 
