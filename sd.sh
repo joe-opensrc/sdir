@@ -12,6 +12,16 @@ sd(){
   local usg="
   ${FUNCNAME[0]} [-S] [-L <depth>] [-cfhsuv]
 
+    -F <regex>  :=  filter filetype by regex
+    -S          :=  do not sort output (use filesystem order)
+    -L <depth>  :=  limit depth of call to find + du (aka., max-*depth)
+    -c          :=  /don't/ colorize output 
+    -f          :=  sort filename alphabetically
+    -h          :=  this help message ;) 
+    -s          :=  sort by size
+    -u          :=  use GNU 'du' to calculate size ( slows things down, but is informative :) )
+    -v          :=  sort filename via natural-sort 
+
   "
 
   local OPTIND= OPTARG= OPTERR=
